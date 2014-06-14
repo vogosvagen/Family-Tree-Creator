@@ -20,11 +20,20 @@ int size(string fileName){
 	return size;
 }
 
-void init(int n,std::string* s,int* a,int* yob,bool* aliv){
-	s=new std::string[n];
-	a=new int[n];
-	yob=new int[n];
-	aliv=new bool[n];
+void init(Person *p,string fileName){
+	ifstream ifile;
+	ifile.open(fileName);
+	int i=0;
+	string name,alive;
+	int yob;
+	while(!ifile.eof()){
+		ifile>>name>>yob>>alive;
+		p[i].setName(name);
+		p[i].setYob(yob);
+		p[i].setAge();
+		p[i].setAlive(alive);
+		i++;
+	}
 }
 
 void importToArrays(string fileName){
