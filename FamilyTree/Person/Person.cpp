@@ -52,12 +52,12 @@ using namespace std;
 	}
 
 	void Person::display(){
-			cout<<getName()<<"\t"<<getYob()<<" "<<"( "<<getAge()<<" )"<<"\t"<<getAlive()<<"\n";		
+			cout<<getName()<<"\t"<<getYob()<<" "<<"(Age: "<<getAge()<<" )"<<"\t"<<getAlive()<<"\n";		
 	}
 
 	void display2(int n,Person *p){
 		for(int i=0;i<n;i++){
-			cout<<p[i].getName()<<"\t"<<p[i].getYob()<<" "<<"( "<<p[i].getAge()<<" )"<<"\t"<<p[i].getAlive()<<"\n";
+			cout<<p[i].getName()<<"\t"<<p[i].getYob()<<" "<<"(Age: "<<p[i].getAge()<<" )"<<"\t"<<p[i].getAlive()<<"\n";
 		}
 	}
 

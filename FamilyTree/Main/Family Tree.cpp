@@ -16,6 +16,20 @@ int main(){
 	Person *p=new Person[n];
 	init(p,fileName);
 	display2(n,p);
+	int ch=0;
+	while(ch!=-1){
+		menu();
+		cin>>ch;
+		if(ch==-1)
+			break;
+		else if(ch==1){
+		add(p,n,fileName);
+		display2(n,p);
+		}
+		else if(ch==3){
+			save(p,n,fileName);
+		}
+	}
 
 	return 0;
 }
