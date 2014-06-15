@@ -23,7 +23,7 @@ int main(){
 		if(ch==-1)
 			break;
 		else if(ch==1){
-		add(p,n,fileName);
+		p=add(p,n,fileName);
 		display2(n,p);
 		}
 		else if(ch==3){
