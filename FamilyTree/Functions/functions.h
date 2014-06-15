@@ -11,7 +11,7 @@ void init(Person *p,std::string fileName);
 
 void menu();
 
-void add(Person *p,int &n,std::string fileName);
+Person* add(Person *p,int &n,std::string fileName);
 
 void save(Person *p,int n,std::string fileName);
 

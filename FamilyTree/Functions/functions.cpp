@@ -51,9 +51,15 @@ void menu(){
 	cout<<"3-Save changes.\n";
 }
 
-void add(Person *p,int &n,string fileName){
+Person* add(Person *p,int &n,string fileName){
 	Person *temp=new Person[n+1];
-	temp=p;
+	for(int i=0;i<n;i++){
+		temp[i].setName(p[i].getName());
+		temp[i].setYob(p[i].getYob());
+		temp[i].setAge();
+		temp[i].setAlive(p[i].getAlive());
+	}
+	//temp=p;
 	string name,alive;
 	int yob;
 	cout<<"Name of new person: ";
@@ -73,9 +79,8 @@ void add(Person *p,int &n,string fileName){
 		temp[n].setAlive("Null");
 	p=nullptr;
 	n=n+1;
-	p=new Person[n];
-	p=temp;
 	cout<<"Added.\n";
+	return temp;	
 }
 
 void save(Person *p,int n,string fileName){
