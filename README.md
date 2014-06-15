@@ -1,2 +1,2 @@
-Karans-100-Project
+reddit-projects
 ==================
