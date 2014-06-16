@@ -13,6 +13,7 @@ int main(){
 	string fileName2="Relation.txt";
 	int n;
 	char **relation;
+	int **matrix;
 	if((n=size(fileName))==-1)
 		return 0;
 	Person *p=new Person[n];
@@ -45,6 +46,10 @@ int main(){
 		else if(ch==6){
 			relation=loadRelation(n,fileName2);
 
+		}
+		else if(ch==203){
+			matrix=getMatrix(n,relation);
+			eularPath(matrix,n);
 		}
 
 	}

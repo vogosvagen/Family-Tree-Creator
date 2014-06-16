@@ -52,6 +52,7 @@ void menu(){
 	cout<<"4-Relation.\n";
 	cout<<"5-Relation tree.\n";
 	cout<<"6-Load Relation.\n";
+	cout<<"203-Eular Path. (please load relations first)\n";
 }
 
 Person* add(Person *p,int &n,string fileName){
@@ -243,4 +244,50 @@ char** loadRelation(int n,string fileName){
 		}
 	}
 	return relation;
+}
+
+void eularPath(int** matrix,int n){
+	int oddv=0;
+	int countodd=0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			cout<<matrix[i][j]<<" ";
+			if(matrix[i][j]==1)
+				countodd++;
+		}
+		if(countodd%2==1)
+			oddv++;
+		cout<<"\n";
+		countodd=0;
+	}
+	if(oddv==0){
+		cout<<"Eular circuit excists!\n";
+	}
+	else if(oddv==2)
+		cout<<"Eular path excists!\n";
+	else
+		cout<<"No Eular path Found :(\n";	
+}
+
+int** getMatrix(int n,char** relation){
+	int **matrix;	//For General Relation
+	matrix=new int *[n];
+	for(int i=0;i<n;i++)
+		matrix[i]=new int [n];
+	
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
+			matrix[i][j]=0;
+	
+
+
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(relation[i][j]=='B' || relation[i][j]=='S' || relation[i][j]=='M' || relation[i][j]=='F' || relation[i][j]=='P')
+				matrix[i][j]=1;
+			else
+				matrix[i][j]=0;
+		}
+	}
+	return matrix;
 }

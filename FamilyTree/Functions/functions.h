@@ -26,4 +26,9 @@ void nextgen(Person *p,int n,char** relation,int x,int y,int &g);
 char** loadRelation(int n,std::string fileName);
 
 void printRelation(char** relation);
+
+void eularPath(int** matrix,int n);
+
+int** getMatrix(int n,char** relation);
+
 #endif
