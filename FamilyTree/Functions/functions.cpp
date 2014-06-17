@@ -39,6 +39,7 @@ void init(Person *p,string fileName){
 	ifile.close();
 }
 
+//does nothing now
 void importToArrays(string fileName){
 	ifstream ifile;
 	ifile.open(fileName);
